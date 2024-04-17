@@ -17,10 +17,10 @@
 		<java.version>17</java.version>
 
 		<!-- SonarQube properties -->
-    	<!-- <sonar.projectKey>tajil-product-management</sonar.projectKey>
+    	<sonar.projectKey>tajil-product-management</sonar.projectKey>
     	<sonar.projectName>tajil-product-management</sonar.projectName>
     	<sonar.host.url>http://localhost:9000</sonar.host.url>
-    	<sonar.token>sqp_aaed6c94589cc05625eb4fd133d753feb6820bfd</sonar.token> -->
+    	<sonar.token>sqp_9dde74ee475590fe8378ad83e872c082ce9817a2</sonar.token>
 	</properties>
 	<dependencies>
 		<dependency>
