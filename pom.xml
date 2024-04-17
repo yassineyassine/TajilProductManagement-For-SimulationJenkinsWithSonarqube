@@ -17,8 +17,8 @@
 		<java.version>17</java.version>
 
 		<!-- SonarQube properties -->
-    	<sonar.projectKey>tajil-product-management</sonar.projectKey>
-    	<sonar.projectName>tajil-product-management</sonar.projectName>
+    	<sonar.projectKey>tajil-product-management2</sonar.projectKey>
+    	<sonar.projectName>tajil-product-management2</sonar.projectName>
     	<sonar.host.url>http://localhost:9000</sonar.host.url>
     	<sonar.token>sqp_9dde74ee475590fe8378ad83e872c082ce9817a2</sonar.token>
 	</properties>
