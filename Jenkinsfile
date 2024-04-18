@@ -10,13 +10,6 @@ pipeline {
     }
     
     stages {
-        // stage('Git Checkout') {
-        //     steps {
-        //         checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/aan629/TajilProductManagement-For-SimulationJenkinsWithSonarqube']])
-        //         bat 'mvn clean install'
-        //         echo 'Git Checkout Completed'
-        //     }
-        // }
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
@@ -26,11 +19,47 @@ pipeline {
                 }
             }
         }
+
         stage("Quality Gate") {
             steps {
                 waitForQualityGate abortPipeline: true
                 echo 'Quality Gate Completed'
             }
+        }
+
+         stage('Build Docker Image') {
+            steps {
+                script {
+                    bat 'docker build -t aandocker629/tpm-springboot-1.0 .'
+                    echo 'Build Docker Image Completed'
+                }
+            }
+        }
+
+        stage('Docker Push') {
+            steps {
+                script {
+                    withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhub-password')]) {
+                        bat ''' docker login -u aandocker629 -p "%dockerhub-password%" '''
+                    }
+                    bat 'docker push aandocker629/tpm-springboot-1.0'
+                }
+            }
+        }
+
+        stage ('Docker Run') {
+            steps {
+                script {
+                    bat 'docker run -d --name tpm-springboot-1.0 -p 8099:8080 aandocker629/tpm-springboot-1.0'
+                    echo 'Docker Run Completed'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            bat 'docker logout'
         }
     }
 }
