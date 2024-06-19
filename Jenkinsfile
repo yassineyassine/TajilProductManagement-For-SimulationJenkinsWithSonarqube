@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    tools {
-        maven 'jenkins-maven'
-    }
     environment {
         BUILD_NUMBER_ENV = "${env.BUILD_NUMBER}"
         TEXT_SUCCESS_BUILD = "[#${env.BUILD_NUMBER}] Project: ${JOB_NAME} build Success"
