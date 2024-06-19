@@ -20,7 +20,7 @@
     	<sonar.projectKey>tajil-product-management</sonar.projectKey>
     	<sonar.projectName>tajil-product-management</sonar.projectName>
     	<sonar.host.url>http://sonarqube:9000</sonar.host.url>
-    	<sonar.token>sqp_55315763a5dc586b011486e333e0702f03b09623</sonar.token>
+    	<sonar.token>sqp_b412984f1a0f7b476a2f5b9e5f838df0101f92e9</sonar.token>
 	</properties>
 	<dependencies>
 		<dependency>
