@@ -19,8 +19,8 @@
 		<!-- SonarQube properties -->
     	<sonar.projectKey>tajil-product-management</sonar.projectKey>
     	<sonar.projectName>tajil-product-management</sonar.projectName>
-    	<sonar.host.url>http://localhost:9000</sonar.host.url>
-    	<sonar.token>sqp_0d0f5d1b8362a0991b9440056903800fc4d44d6c</sonar.token>
+    	<sonar.host.url>http://sonarqube:9000</sonar.host.url>
+    	<sonar.token>sqp_55315763a5dc586b011486e333e0702f03b09623</sonar.token>
 	</properties>
 	<dependencies>
 		<dependency>
